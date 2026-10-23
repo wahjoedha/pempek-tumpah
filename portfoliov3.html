@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Portofolio</title>
+<!--
+-->
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700&family=Lilita+One&family=Quicksand:wght@500;600;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+<style>
+/* 1rem = 10px pada lebar desain 736px; semua ikut mengecil/membesar sesuai layar */
+html{font-size:calc(min(100vw,736px)/73.6);-webkit-text-size-adjust:100%}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0e7a30;font-family:'Quicksand',sans-serif;overflow-x:hidden;-webkit-tap-highlight-color:transparent;
+}
+a{color:inherit;text-decoration:none}
+.page{position:relative;width:73.6rem;height:134.7rem;margin:0 auto;overflow:hidden;background:#0e7a30;
+  background-image:linear-gradient(90deg,transparent 2.8rem,rgba(0,0,0,.3) 2.8rem,rgba(0,0,0,.3) 3.1rem,transparent 3.1rem,transparent 27rem,rgba(0,0,0,.3) 27rem,rgba(0,0,0,.3) 27.3rem,transparent 27.3rem,transparent 47.5rem,rgba(0,0,0,.3) 47.5rem,rgba(0,0,0,.3) 47.8rem,transparent 47.8rem)}
+.abs{position:absolute}
+.hand{font-family:'Caveat',cursive}
+.disp{font-family:'Lilita One',sans-serif}
+
+/* BUKU */
+.book{left:-1rem;top:23.5rem;width:75.6rem;height:108rem;
+  background:linear-gradient(90deg,#cfcfcf 0,#ececec 12%,#f6f6f6 22%,#d9d9d9 23.2%,#f3f3f3 26%,#f7f7f7 100%);
+  border-top:.9rem solid #7b3311;border-bottom:1rem solid #9d1b25;border-radius:1.2rem;box-shadow:0 1rem 3rem rgba(0,0,0,.45)}
+
+/* QR */
+.qr{background:#fff;padding:.9rem;border-radius:.9rem;box-shadow:0 .5rem 1.4rem rgba(0,0,0,.4);text-align:center;display:block}
+.qr .code,.note .code{display:block;width:100%;aspect-ratio:1;background:#fff repeating-conic-gradient(#222 0 25%,#fff 0 50%) 0 0/1.3rem 1.3rem;overflow:hidden}
+.qr img,.note img{width:100%;height:100%;object-fit:cover;display:block}
+.qr small{display:block;margin-top:.5rem;color:#222;white-space:nowrap;height:1.2rem;line-height:1.2rem;overflow:hidden}
+.qr small span{display:inline-block;font-size:.95rem;font-weight:700;white-space:nowrap}
+
+/* PIN, KLIP */
+.knob{left:29.3rem;top:11.2rem;width:8.6rem;height:8.6rem;border-radius:50%;
+  background:radial-gradient(circle at 35% 30%,#f2f2f2,#a9a9a9 55%,#6f6f6f);box-shadow:0 .6rem 1.2rem rgba(0,0,0,.45);z-index:1}
+.knob::after{content:"";position:absolute;inset:1.8rem;border-radius:50%;background:radial-gradient(circle at 40% 35%,#8c8c8c,#d8d8d8);box-shadow:inset 0 .2rem .4rem rgba(0,0,0,.5)}
+.pin{left:10.4rem;top:17.8rem;width:5.4rem;height:5.4rem;border-radius:50%;z-index:6;
+  background:radial-gradient(circle at 35% 30%,#ff7b7b,#d11f2b 60%,#8c0f18);box-shadow:.5rem .8rem 1rem rgba(0,0,0,.4)}
+.pin::after{content:"";position:absolute;left:3.2rem;top:4.4rem;width:.5rem;height:3.4rem;background:#999;transform:rotate(-30deg);transform-origin:top}
+.clip{left:17rem;top:16.5rem;width:5rem;height:8rem;z-index:6;transform:rotate(35deg)}
+
+/* FOTO */
+.paper{left:6.5rem;top:17.5rem;width:28rem;height:38rem;transform:rotate(8deg);z-index:4;
+  background:#f8efae;background-image:linear-gradient(rgba(170,150,60,.35) .1rem,transparent .1rem),linear-gradient(90deg,rgba(170,150,60,.35) .1rem,transparent .1rem);
+  background-size:1.7rem 1.7rem;box-shadow:0 1rem 2.4rem rgba(0,0,0,.4)}
+.photo{position:absolute;left:3rem;top:3.4rem;width:23rem;height:29rem;transform:rotate(-6deg);background:#ccc;
+  box-shadow:0 .5rem 1.2rem rgba(0,0,0,.4);overflow:hidden}
+.photo img{width:100%;height:100%;object-fit:cover;display:block}
+.photo::before{content:"FOTO KAMU";position:absolute;inset:0;display:grid;place-items:center;font:700 2rem 'Quicksand';color:#888;background:#d9d9d9}
+.photo img{position:relative}
+.tape{left:10.5rem;top:-1.6rem;position:absolute;width:11rem;height:3.4rem;background:rgba(220,200,140,.8);transform:rotate(-3deg);z-index:2}
+.star{z-index:5;fill:none;stroke:#f2c21d;stroke-width:5;stroke-linejoin:round;filter:drop-shadow(0 .3rem .3rem rgba(0,0,0,.35))}
+.star.s1{left:16.6rem;top:23.2rem;width:4.8rem;transform:rotate(12deg)}
+.star.s2{left:27.4rem;top:35.8rem;width:7.6rem;transform:rotate(-8deg)}
+.star.s3{left:4.4rem;top:48.4rem;width:6.6rem;fill:#9fb6d6;stroke:#52709e;stroke-width:3;transform:rotate(-10deg)}
+.bigstar{left:29.2rem;top:30.6rem;width:20.5rem;height:20.5rem;z-index:2;fill:none;stroke:#dcc88f;stroke-width:6.5;stroke-linejoin:round;stroke-linecap:round;transform:rotate(-14deg)}
+
+.note{left:5.8rem;top:47.2rem;width:14.6rem;height:10.6rem;z-index:5;transform:rotate(-2deg);
+  background:#f4ecd6;background-image:repeating-linear-gradient(transparent 0 1.3rem,rgba(80,110,200,.3) 1.3rem 1.4rem);
+  box-shadow:0 .6rem 1.2rem rgba(0,0,0,.35);padding:1.8rem 0 0 1.3rem}
+.note .cl{position:absolute;left:5rem;top:-1.6rem;width:5rem;height:3rem;background:#cdb98b;border-radius:.3rem;box-shadow:0 .2rem .4rem rgba(0,0,0,.3)}
+.note .code{width:6.4rem}
+.note .tx{position:absolute;left:8.6rem;top:3.6rem;font-size:1.9rem;color:#2a3cb0;line-height:1;font-weight:700}
+
+/* AMPLOP */
+.env-back{left:41rem;top:5rem;width:28.4rem;height:18.5rem;background:#e7b538;border-radius:.6rem;z-index:2}
+.env-flap{left:41rem;top:-.2rem;width:28.4rem;height:10rem;background:#f4cb52;clip-path:polygon(0 100%,50% 0,100% 100%);z-index:2}
+.letter{left:44rem;top:3.4rem;width:24.6rem;height:12.6rem;background:#f1ead2;transform:rotate(8deg);z-index:3;padding:1.3rem 1.6rem;
+  font-size:1.55rem;line-height:1.4;color:#333;white-space:nowrap;box-shadow:0 .3rem .8rem rgba(0,0,0,.25)}
+.letter b{font-weight:700}
+.lt{display:inline-block;white-space:nowrap}
+.env-front{left:41rem;top:13rem;width:28.4rem;height:10.5rem;background:#f7d15a;clip-path:polygon(0 0,50% 48%,100% 0,100% 100%,0 100%);z-index:4}
+.contact{left:49.6rem;top:17.4rem;z-index:5;font-size:2.4rem;color:#d32920;transform:rotate(8deg);font-weight:700}
+.contact svg{position:absolute;left:-3.6rem;top:-3.4rem;width:4rem;height:4rem;fill:none;stroke:#d32920;stroke-width:2.5;stroke-linecap:round}
+.myig{left:29.6rem;top:3rem;font-size:2.3rem;line-height:1.05;color:#f4d83a;font-weight:500;z-index:3}
+.myig svg{position:absolute;left:.6rem;top:5.4rem;width:3.4rem;height:2.4rem;fill:none;stroke:#f4d83a;stroke-width:2;stroke-linecap:round}
+
+/* HEADLINE */
+.hi{left:44rem;top:30.6rem;font-family:'Baloo 2',sans-serif;font-size:3.6rem;font-weight:500;color:#1f2d8a;line-height:1;z-index:3;white-space:nowrap}
+.hi span{display:inline-block;white-space:nowrap}
+.hi b{font-family:'Lilita One',sans-serif;font-weight:400}
+.call{left:43.7rem;top:35.6rem;font-family:'Baloo 2',sans-serif;font-size:3.9rem;font-weight:500;color:#1f2d8a;line-height:1;z-index:3}
+.name{left:51.5rem;top:34.8rem;font-family:'Lilita One',sans-serif;font-size:7.4rem;line-height:.95;color:#0f7a3a;z-index:3;letter-spacing:.05rem}
+.name span{display:inline-block;white-space:nowrap}
+.bio{left:36rem;top:51.6rem;width:31.8rem;height:14.6rem;overflow:hidden;font-size:1.55rem;line-height:1.58;color:#555;text-align:justify;z-index:3}
+.bio b{color:#2e2e2e}
+
+/* LABEL OVAL */
+.oval{font-family:'Lilita One',sans-serif;border-radius:50%;display:grid;place-items:center;z-index:3;text-align:center;
+  box-shadow:0 .7rem 1.1rem rgba(0,0,0,.4),inset 0 0 0 .2rem rgba(0,0,0,.55)}
+.oval span{display:inline-block;white-space:nowrap;line-height:1}
+.o-exp{left:5.2rem;top:61.2rem;width:15rem;height:5.8rem;background:#f4c92a;border:.5rem solid #0f7a3a;color:#0f6b2c;font-size:2.4rem;transform:rotate(-2deg)}
+.o-edu{left:40.4rem;top:67.2rem;width:15.2rem;height:5.8rem;background:#e3441c;border:.5rem solid #1f2d8a;color:#f4c92a;font-size:2.4rem;transform:rotate(-1deg)}
+.o-cer{left:6.6rem;top:100rem;width:17.6rem;height:6.2rem;background:#1f72c8;border:.5rem solid #f4c92a;color:#f4c92a;font-size:2.4rem;transform:rotate(-1deg)}
+.o-sof{left:7.2rem;top:112.2rem;width:15.6rem;height:5.8rem;background:#f4c92a;border:.5rem solid #0f7a3a;color:#0f6b2c;font-size:2.4rem;transform:rotate(-1deg)}
+
+/* STICKY NOTE PENGALAMAN */
+.sticky{left:3.8rem;top:66.8rem;width:33.4rem;height:29.6rem;overflow:hidden;font-size:1.7rem;background:#f7e14b;transform:rotate(-4deg);z-index:3;padding:2.6rem 2.4rem;
+  color:#0f6b2c;box-shadow:0 .8rem 1.8rem rgba(0,0,0,.35),inset 0 -2rem 3rem rgba(200,160,0,.18)}
+.sticky h4{font-size:.95em;font-weight:700;text-transform:uppercase;line-height:1.25;margin-bottom:.8em}
+.sticky ul{list-style:none;font-size:1em;line-height:1.45;font-weight:500}
+
+/* PENDIDIKAN */
+.edu{left:39.8rem;top:75.4rem;width:28.6rem;height:7.4rem;overflow:hidden;font-size:1.45rem;line-height:1.25;color:#2c3b46;z-index:3}
+.edu b{font-weight:700;text-transform:uppercase}
+
+/* TAG TAPE */
+.tagw{filter:drop-shadow(0 .5rem .5rem rgba(0,0,0,.35));z-index:3}
+.tag span{display:inline-block;white-space:nowrap;line-height:1}
+.tag{display:grid;place-items:center;font-family:'Lilita One',sans-serif;font-size:1.65rem;text-align:center;width:100%;height:100%;
+  clip-path:polygon(1% 0,99% 5%,100% 20%,97% 36%,100% 52%,97% 68%,100% 86%,98% 100%,2% 95%,0 80%,3% 62%,0 45%,3% 28%,0 12%)}
+.t1{left:38.8rem;top:84rem;width:11.8rem;height:6rem;transform:rotate(-3deg)}.t1 .tag{background:#80c9e8;color:#1f3b93}
+.t2{left:52.6rem;top:83.4rem;width:12.6rem;height:5.8rem;transform:rotate(-6deg)}.t2 .tag{background:#f4d03f;color:#e2601f}
+.t3{left:38.6rem;top:91.2rem;width:11.8rem;height:5.8rem;transform:rotate(-8deg)}.t3 .tag{background:#f25a28;color:#f4d03f}
+.t4{left:52rem;top:89.6rem;width:12.8rem;height:5.8rem;transform:rotate(-5deg)}.t4 .tag{background:#6fd24c;color:#0f6b2c}
+
+/* SERTIFIKASI */
+.cert{left:29.7rem;top:99.6rem;width:38rem;height:9.4rem;overflow:hidden;font-size:1.5rem;line-height:1.38;color:#4a4a4a;text-align:justify;z-index:3}
+.cert b{color:#222}
+
+/* SOFTWARE */
+.sw{z-index:3;display:flex;gap:1.3rem;flex-wrap:nowrap}
+.sw i{font-style:normal;width:5.8rem;height:5.8rem;border-radius:1.5rem;background:#0f7a3a;color:#f4c92a;display:grid;place-items:center;
+  font:400 3.5rem 'Lilita One',sans-serif;box-shadow:0 .4rem .8rem rgba(0,0,0,.25)}
+.sw1{left:33.2rem;top:111.8rem}.sw2{left:36.2rem;top:119.2rem}
+.leaf{left:49.5rem;top:130.4rem;width:10rem;z-index:3}
+</style>
+</head>
+<body>
+<main class="page">
+
+  <div class="abs book"></div>
+
+  <!-- ✏️ GANTI: QR Instagram 1 (gambar + link + label) -->
+  <a class="abs qr" href="https://www.instagram.com/supppersetyo?vrfl=aGszcXE1ZDFrcjJ1" target="_blank" rel="noopener" style="left:5.4rem;top:4.2rem;width:11.4rem;transform:rotate(-8deg);z-index:2">
+    <span class="code"><img src="supper.jpeg" alt="QR Instagram" onerror="this.style.display='none'"></span><small><span data-w="9.2">@wahyudhaha</span></small></a>
+  <!-- ✏️ GANTI: QR Instagram 2 (gambar + link + label) -->
+  <a class="abs qr" href="https://www.instagram.com/wah_yudhahaha?rpxt=MjNydGp1c2hsdzdl" target="_blank" rel="noopener" style="left:16.6rem;top:3.8rem;width:10rem;transform:rotate(1deg);z-index:2">
+    <span class="code"><img src="yudhaha.jpeg" alt="QR Instagram 2" onerror="this.style.display='none'"></span><small><span data-w="8">@suppersetyo</span></small></a>
+
+  <div class="abs hand myig">My<br>Instagram<svg viewBox="0 0 34 24"><path d="M30 3C20 4 10 8 4 20M4 20l1-7M4 20l7-3"/></svg></div>
+
+  <div class="abs knob"></div>
+  <div class="abs pin"></div>
+  <svg class="abs clip" viewBox="0 0 40 80" fill="none" stroke="#9fb0c4" stroke-width="3" stroke-linecap="round"><path d="M12 60V16a8 8 0 0 1 16 0v46a12 12 0 0 1-24 0V22"/></svg>
+
+  <!-- AMPLOP KONTAK -->
+  <div class="abs env-back"></div>
+  <div class="abs env-flap"></div>
+  <div class="abs letter">
+    <!-- ✏️ GANTI: telepon / email / alamat -->
+    <div class="lt" data-w="21.2"><b>HP:</b> <a href="tel:+6289603292156">+62 896 0329 2156</a><br>
+    <b>Email:</b> <a href="mailto:wahyudhacahyo@email.com">wahyudhacahyo@email.com</a><br>
+    <b>Address:</b> Bengkulu, Indonesia</div>
+  </div>
+  <div class="abs env-front"></div>
+  <a class="abs hand contact" href="mailto:wahyudhacahyo@email.com"><svg viewBox="0 0 40 40"><path d="M8 4c10 2 14 10 6 18M14 22l-1-8M14 22l8-3" transform="translate(6 4)"/></svg>Let's contact!</a>
+
+  <!-- BIG STAR + HEADLINE -->
+  <svg class="abs bigstar" viewBox="0 0 100 100"><polygon points="50,8 61,38 93,39 68,59 77,91 50,72 23,91 32,59 7,39 39,38"/></svg>
+  <!-- ✏️ GANTI: nama panggilan & nama lengkap -->
+  <div class="abs hi"><span data-w="24">Hi, I'm <b>wahyudha</b></span></div>
+  <div class="abs call">You<br>can<br>call<br>me</div>
+  <div class="abs name"><span data-w="16.4">WAHYU<br>or YUDHA</span></div>
+  <!-- ✏️ GANTI: bio -->
+  <p class="abs bio" data-h="1">I'm a <b>PENGANGGURAN &amp; PELAJAR RAJIN</b> based in Bengkulu, Indonesia, pelajar rajin yang tidak pernah bolos &amp; aktiv dalam berbagai kegiatan sekolah yang sangad bermanfaat bagi kebugaran tubuh</p>
+
+  <!-- FOTO -->
+  <div class="abs paper">
+    <div class="tape"></div>
+    <div class="photo"><img src="mullet.jpeg" alt="Wahyudha" onerror="this.style.display='none'"></div><!-- ✏️ GANTI: foto -->
+  </div>
+  <svg class="abs star s1" viewBox="0 0 100 100"><polygon points="50,6 62,38 95,38 68,58 79,92 50,72 21,92 32,58 5,38 38,38"/></svg>
+  <svg class="abs star s2" viewBox="0 0 100 100"><polygon points="50,6 62,38 95,38 68,58 79,92 50,72 21,92 32,58 5,38 38,38"/></svg>
+  <svg class="abs star s3" viewBox="0 0 100 100"><polygon points="50,6 62,38 95,38 68,58 79,92 50,72 21,92 32,58 5,38 38,38"/></svg>
+
+  <!-- ✏️ GANTI: QR Behance (gambar + link) -->
+  <a class="abs note" href="https://open.spotify.com/playlist/6XZeyAvVOrLGRmxtiCwJQq?si=QAFu7PwHRs-yNmTgEAGkBw&utm_source=copy-link" target="_blank" rel="noopener">
+    <span class="cl"></span>
+    <span class="code"><img src="upin.jpeg" alt="QR Behance" onerror="this.style.display='none'"></span>
+    <span class="tx hand">My<br>Playlist</span>
+  </a>
+
+  <!-- PENGALAMAN -->
+  <div class="abs oval o-exp"><span data-w="11.6">EXPERIENCE</span></div>
+  <!-- ✏️ GANTI: isi pengalaman -->
+  <div class="abs sticky" data-h="1">
+    <h4>pro player ml (2019 - Now)</h4>
+    <h4>antek bowo &amp; mafia mbg (2025 - Now)</h4>
+    <h4>preman pasar(2022 - 2025)</h4>
+    <ul>
+      <li>buzzer pemerintah</li>
+      <li>cheff</li>
+      <li>peramal tarot</li>
+      <li>pelari kalcer</li>
+      <li>doktor bedah jantung</li>
+    </ul>
+  </div>
+
+  <!-- PENDIDIKAN -->
+  <div class="abs oval o-edu"><span data-w="11.6">EDUCATION</span></div>
+  <!-- ✏️ GANTI: pendidikan -->
+  <div class="abs edu" data-h="1"><b>SMKN 2 KOTA BENGKULU<br>(2025 - 2028)</b><br>geo teknik<br>calon tni gagal</div>
+
+  <!-- TAG -->
+  <!-- ✏️ GANTI: 4 tag keahlian -->
+  <div class="abs tagw t1"><div class="tag"><span data-w="9">MASANG GAS</span></div></div>
+  <div class="abs tagw t2"><div class="tag"><span data-w="9">ANGKAT GALON</span></div></div>
+  <div class="abs tagw t3"><div class="tag"><span data-w="9">BIKIN KOPI</span></div></div>
+  <div class="abs tagw t4"><div class="tag"><span data-w="9">MASAK NASI</span></div></div>
+
+  <!-- SERTIFIKASI -->
+  <div class="abs oval o-cer"><span data-w="13.4">CERTIFICATION</span></div>
+  <!-- ✏️ GANTI: sertifikasi -->
+  <p class="abs cert" data-h="1"><b>“HAFAL JUZ 30-29”</b> certified to participate in <b>“LOMBA BALAP KARUNG”</b>Saya memenang kan lomba balap karung saat kelas 8 SMP<br><b>di selenggarakan oleh "HAMAS SMPITRR"</b></p>
+
+  <!-- SOFTWARE -->
+  <div class="abs oval o-sof"><span data-w="11.4">SOFTWARES</span></div>
+  <!-- ✏️ GANTI: singkatan software (maks. 2-3 huruf per kotak, tambah/kurangi <i>) -->
+  <div class="abs sw sw1"><i>OP</i><i>GPT</i><i>K3</i><i>GI</i></div>
+  <div class="abs sw sw2"><i>DS</i><i>CP</i><i>CLD</i></div>
+
+  <svg class="abs leaf" viewBox="0 0 100 60" fill="#f08a1c"><path d="M50 40C40 20 20 10 4 14c6 16 22 28 46 30zM50 40c10-20 30-30 46-26-6 16-22 28-46 30z"/></svg>
+</main>
+<script>
+/* Auto-fit: teks otomatis mengecil bila terlalu panjang, jadi aman diganti isinya. */
+(function(){
+  function fit(){
+    var u=parseFloat(getComputedStyle(document.documentElement).fontSize);
+    document.querySelectorAll('[data-w],[data-h]').forEach(function(el){
+      el.style.fontSize='';
+      var fs=parseFloat(getComputedStyle(el).fontSize)/u, n=0;
+      var tooBig=function(){
+        if(el.hasAttribute('data-w')) return el.offsetWidth/u>parseFloat(el.getAttribute('data-w'));
+        return el.scrollHeight>el.clientHeight+1;
+      };
+      while(tooBig()&&fs>.5&&n++<400){fs-=.05;el.style.fontSize=fs+'rem';}
+    });
+  }
+  fit();
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);
+  window.addEventListener('load',fit);
+})();
+</script>
+</body>
+</html>
